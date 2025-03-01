@@ -2,7 +2,7 @@
 title: "PaddleOCR scratch"
 draft: false
 tags:
-  - 
+date: 2024-08-28
 ---
 
  [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) is basically framework for creating and finetuning ocr models. It has some problems like: 

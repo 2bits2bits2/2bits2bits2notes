@@ -1,3 +1,57 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// ── Working Checklist · illustrated cards ───────────────────────────────
+// Source: a bundled A4 design document. Each page is wrapped in an <svg>
+// with a <foreignObject> so the fixed 794×1123 layout scales fluidly to
+// the content column. Colours are remapped onto theme variables so the
+// cards follow the site palette in both light and dark mode.
+.wc-figure {
+  margin: 2.5rem 0;
+}
+
+.wc-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: var(--wc-bg);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 0 0 1px var(--lightgray);
+}
+
+.wc-card {
+  // light palette
+  --wc-bg: #ffffff;
+  --wc-ink: #16181d;
+  --wc-move: #284b63; // the move you make (site accent)
+  --wc-muted: #4e4e4e;
+  --wc-line: #8c8f96;
+  --wc-fill: #e9eaed;
+  --wc-soft: #c9cbd1;
+
+  width: 794px;
+  height: 1123px;
+  box-sizing: border-box;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--wc-bg);
+  color: var(--wc-ink);
+  font-family: var(--bodyFont);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+[saved-theme="dark"] .wc-card {
+  --wc-bg: #1c1c1f;
+  --wc-ink: #ebebec;
+  --wc-move: #7b97aa; // the move you make (site accent)
+  --wc-muted: #d4d4d4;
+  --wc-line: #6b6b70;
+  --wc-fill: #2c2c30;
+  --wc-soft: #3a3a3f;
+}

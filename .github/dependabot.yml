@@ -4,6 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      # Preact 11 breaks Quartz 5's server-side rendering (pages deploy empty).
+      - dependency-name: "preact"
+        update-types:
+          - "version-update:semver-major"
     groups:
       # Separated so a risky third-party major cannot block ecosystem updates.
       quartz-ecosystem:

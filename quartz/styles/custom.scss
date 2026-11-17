@@ -1,3 +1,62 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+/* --- Working Checklist prints (content/working-checklist-illustrations.md) ---
+   Each A4 page is an <svg viewBox="0 0 794 1123"> wrapping a
+   <foreignObject> with a fixed 794x1123 .wc-card inside, so the whole
+   page scales with the content column. Palette is remapped onto these
+   variables by source/unpack_checklist.py. */
+
+:root {
+  --wc-bg: #ffffff;
+  --wc-ink: #16181d;
+  --wc-move: #1d3fae;
+  --wc-muted: #55585f;
+  --wc-line: #8c8f96;
+  --wc-fill: #e9eaed;
+  --wc-soft: #c9cbd1;
+}
+
+:root[saved-theme="dark"] {
+  --wc-bg: #16181d;
+  --wc-ink: #eceef2;
+  --wc-move: #8fb0ff;
+  --wc-muted: #a9adb6;
+  --wc-line: #6a6e76;
+  --wc-fill: #24272d;
+  --wc-soft: #3c4046;
+}
+
+.wc-figure {
+  margin: 1.5rem 0 2.5rem;
+  break-inside: avoid;
+}
+
+.wc-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 794 / 1123;
+  overflow: visible;
+}
+
+.wc-card {
+  box-sizing: border-box;
+  width: 794px;
+  height: 1123px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--wc-bg);
+  color: var(--wc-ink);
+  font-family: "Atkinson Hyperlegible", "Source Sans Pro", Verdana, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  overflow: hidden;
+}
+
+.wc-card svg {
+  overflow: visible;
+}
